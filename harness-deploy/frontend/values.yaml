@@ -1,5 +1,4 @@
 name: <+service.name>
-#username: <+variable.username>
 replicas: 1
 image: <+artifact.image>
 dockercfg: <+artifact.imagePullSecret>
