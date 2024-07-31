@@ -31,11 +31,9 @@ DEPLOYMENT_VARIABLE = os.getenv('HOSTNAME')
 
 SERVICE_NAME = os.getenv('SERVICE_NAME')
 EXECUTION_USER = os.getenv('EXECUTION_USER')
-LAST_EXECUTION_ID=os.getenv('LAST_EXECUTION_ID')
-APPLICATION_VERSION=os.getenv('APPLICATION_VERSION')
-ARTIFCAT_VERSION=os.getenv('ARTIFACT_VERSION')
-
-
+LAST_EXECUTION_ID = os.getenv('LAST_EXECUTION_ID')
+APPLICATION_VERSION = os.getenv('APPLICATION_VERSION')
+ARTIFACT_VERSION = os.getenv('ARTIFACT_VERSION')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -49,8 +47,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
-
-CORS_ALLOW_METHODS =[
+CORS_ALLOW_METHODS = [
     "DELETE",
     "GET",
     "OPTIONS",
@@ -70,14 +67,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
 CORS_ALLOW_ALL_ORIGINS = True
 CSRF_ALLOW_ALL_ORIGINS = True
-
-import os
-
-
-
 ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [

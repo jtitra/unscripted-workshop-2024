@@ -4,10 +4,12 @@ image: <+artifact.image>
 dockercfg: <+artifact.imagePullSecret>
 namespace: <+infra.namespace>
 serviceType: LoadBalancer
-servicePort: 80
+servicePort: 8081
 serviceTargetPort: 8000
 env:
   config:
-    HARNESS_BUILD: <+pipeline.sequenceId>
+    APPLICATION_VERSION: 1.<+pipeline.sequenceId>
     SERVICE_NAME: <+service.name>
+    LAST_EXECUTION_ID: <+pipeline.sequenceId>
+    HARNESS_BUILD: <+pipeline.sequenceId>
     ARTIFACT_VERSION: <+artifact.image>
