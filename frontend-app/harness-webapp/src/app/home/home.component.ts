@@ -67,8 +67,8 @@ export class HomeComponent {
   
   checkRelase(){
     const isCanary=false;
-    this.apiService.checkRelease()
     this.refreshExecutionDetails();
+    this.apiService.checkRelease()
     .subscribe((data) => {
       if (data.deployment_type == 'canary'){
        this.isCanary= true;
