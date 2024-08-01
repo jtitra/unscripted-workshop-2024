@@ -38,8 +38,7 @@ export class DistributionComponent {
 
 
   run(){
-    this.autoRefreshGraph(10)
-    this.performApiCallRepeatedly(10)
+    this.performApiCallRepeatedly(10);
   }
 
   refreshDistribution() {
@@ -50,17 +49,6 @@ export class DistributionComponent {
     const groupedData = this.groupDataByTime(this.distributionData);
     this.data = this.transformDataForChart(groupedData);
     console.log(this.distributionData)
-
-  //  this.apiService
-  //    .getDistribution(startTimestamp, endTimestamp)
-  //    .subscribe((data) => {
-   //     const groupedData = this.groupDataByTime(data);
-
-    //    this.data = this.transformDataForChart(groupedData);
-
-    //  });
-
-
   }
 
   name = 'Angular';
@@ -217,8 +205,9 @@ return dataArray
       // Your API call logic here
       this.apiService.generateEntry('normal').subscribe((data) => {
         this.distributionData.push(data)
-        console.log('API call executed at', new Date().toISOString());
-        
+        console.log('Data call executed at', new Date().toISOString());
+        this.refreshDistribution();
+        console.log('Refresh call executed at', new Date().toISOString());
       });
     };
 
