@@ -1,7 +1,7 @@
 from rest_framework import serializers
 import os
 from deploy.models import RequestEntry
-from datetime import time
+import time
 
 DEPLOYMENT = os.getenv('DEPLOYMENT_STATE=')
 
